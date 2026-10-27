@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5b7cfa">
+  <title>Digital Bible Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Bootstrap + Icons (local copies) -->
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-icons.min.css">
+  <!-- Tailwind (built, tw- prefix so it never clashes with Bootstrap) -->
+  <link rel="stylesheet" href="tailwind.css">
+  <!-- Our design -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+  <nav class="navbar sticky-top glass-nav">
+    <div class="container-xl gap-2">
+      <button id="back" class="btn btn-sm btn-light rounded-pill" hidden aria-label="Back to index"><i class="bi bi-chevron-left"></i><span class="d-none d-sm-inline"> Index</span></button>
+      <span class="navbar-brand brand mb-0 me-auto text-truncate" id="ttl">Digital Bible Journal</span>
+      <button id="exp" class="btn btn-sm btn-outline-primary rounded-pill" aria-label="Backup"><i class="bi bi-cloud-arrow-down"></i><span class="d-none d-md-inline"> Backup</span></button>
+      <button id="imp" class="btn btn-sm btn-outline-primary rounded-pill" aria-label="Restore"><i class="bi bi-cloud-arrow-up"></i><span class="d-none d-md-inline"> Restore</span></button>
+      <button id="th" class="btn btn-sm btn-dark rounded-circle" aria-label="Toggle dark mode"><i class="bi bi-moon-stars-fill"></i></button>
+      <input type="file" id="fi" accept=".json" hidden>
+    </div>
+  </nav>
+
+  <main class="container-xl py-3 py-md-4" id="app"></main>
+
+  <!-- Mobile bottom navigation -->
+  <nav class="bottom-nav d-md-none" aria-label="Quick navigation">
+    <button data-go=""><i class="bi bi-grid-fill"></i><span>Home</span></button>
+    <button data-go="ot"><i class="bi bi-bookmark-star-fill"></i><span>Old</span></button>
+    <button data-go="nt"><i class="bi bi-journal-bookmark-fill"></i><span>New</span></button>
+    <button data-go="se"><i class="bi bi-search"></i><span>Search</span></button>
+    <button data-go="fv"><i class="bi bi-heart-fill"></i><span>Saved</span></button>
+  </nav>
+
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3 toast-pos">
+    <div id="toast" class="toast align-items-center text-bg-dark border-0" role="status"><div class="toast-body text-center"></div></div>
+  </div>
+
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
